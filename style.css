@@ -1,0 +1,18 @@
+
+.main{
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.container{
+    background-color: blueviolet;
+    padding: 10px;
+    border-radius: 15px;
+    color:wheat;
+    font-weight: 600;
+}
+
+input{
+    height: 35px;
+    
+}
