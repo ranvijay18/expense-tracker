@@ -44,27 +44,43 @@ function store(e){
 
 showData = (res) => {
 
+    var ul = document.createElement('ul');
+
     var li = document.createElement('li');
-    var details = res['amount'] + ", " + res['description'] + ", " + res['category'];
+    li.className = "head-amount";
+    var details = res['amount'];
     li.appendChild(document.createTextNode(details));
-    list.appendChild(li);
+    ul.appendChild(li);
+    var li = document.createElement('li');
+    li.className = "head-des";
+    var details = res['description']
+    li.appendChild(document.createTextNode(details));
+    ul.appendChild(li);
+    var li = document.createElement('li');
+    li.className = "head-cat";
+    var details = res['category'];
+    li.appendChild(document.createTextNode(details));
+    ul.appendChild(li);
 
     var editBtn = document.createElement('button');
     editBtn.id = `${res.id}`;
+    editBtn.className = "edit btn btn-outline-success";
     editBtn.appendChild(document.createTextNode("Edit"));
-    li.appendChild(editBtn);
+    ul.appendChild(editBtn);
 
     var deleteBtn = document.createElement('button');
     deleteBtn.id = `${res.id}`;
+    deleteBtn.className = "del btn btn-outline-danger";
     deleteBtn.appendChild(document.createTextNode("Delete"));
-    li.appendChild(deleteBtn);
+    ul.appendChild(deleteBtn);
 
+    list.appendChild(ul);
 
     editBtn.addEventListener('click' , (e) => {
       console.log(e.target.id);
       const expenseId = e.target.id;
 
-      list.removeChild(li);
+      list.removeChild(ul);
 
       axios.get('http://localhost:5000/expense/edit/'+ expenseId)
       .then((res) => {
@@ -82,7 +98,7 @@ showData = (res) => {
     deleteBtn.addEventListener('click' , (e) => {
       const expenseId = e.target.id;
 
-      list.removeChild(li);
+      list.removeChild(ul);
 
       axios.get('http://localhost:5000/expense/delete/'+expenseId)
       .then(() => {
