@@ -1,3 +1,8 @@
+body{
+    background: linear-gradient(to right, #141e30, #243b55);
+    color: white;
+}
+
 
 .main{
     text-align: center;
@@ -5,14 +10,79 @@
 }
 
 .container{
-    background-color: blueviolet;
+    /* background: linear-gradient(to right, #232526, #414345); */
     padding: 10px;
     border-radius: 15px;
     color:wheat;
-    font-weight: 600;
+    font-weight: 400;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    
 }
 
 input{
     height: 35px;
+    border-radius: 13px;
+    border-width: 1px;
+}
+
+
+ul{
+    list-style-type: none;
+}
+
+.container-li{
+    background-color:aliceblue;
+    text-align: center;
+    padding: 10px 0px;
+    border-radius: 15px;
+    color: black;
+    font-weight: 400;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    margin-right: 109px;
+    margin-left: 72px;
+    display: flex;
+    text-align: center;
+    justify-content: space-around;
+}
+
+.head{
+    display: flex;
+    text-align: center;
+    justify-content: space-around;
+    margin-left: 63px;
+    margin-right: 73px;
+
     
+}
+
+ul{
+    display: flex;
+    text-align: center;
+    /* justify-content: space-around; */
+}
+
+ul li{
+    flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: 350px;
+}
+
+ul li:nth-of-type(2) {
+    flex-basis: 270px;
+  }
+
+  ul li:nth-of-type(3) {
+    flex-basis: 380px;
+  }
+
+.edit{
+    margin-left:50px;
+}
+
+.del{
+    margin-left:10px;
+}
+
+li{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
